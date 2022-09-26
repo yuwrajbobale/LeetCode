@@ -21,20 +21,20 @@ class Solution {
             size++;
         }
         
-        if(n == size){
-            return head.next;
+        if(size == n){
+            head = head.next;
+            return head;
         }
         
-        int ptf = size - n;
-        ListNode prev = head;
-        int cp = 1;
-        
-        while(cp != ptf){
-            prev = prev.next;
-            cp++;
+        ListNode curr = head;
+        int ptr = size - n;
+        int cn = 1;
+        while(cn != ptr){
+            curr = curr.next;
+            cn++;
         }
         
-        prev.next = prev.next.next;
+        curr.next = curr.next.next;
         return head;
     }
 }
